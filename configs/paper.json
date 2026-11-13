@@ -1,0 +1,182 @@
+{
+  "model": {
+    "image_hw": 32,
+    "image_ch": 3,
+    "widths": [
+      64,
+      128,
+      256,
+      256
+    ],
+    "arch": "latent8",
+    "k_symbols": 512,
+    "n_points": 64,
+    "n_class": 10,
+    "film_enabled": true,
+    "film_hidden": 64,
+    "conditioning": "power_reach",
+    "cond_p_ref": -1.5,
+    "cond_p_scale": 4.5,
+    "cond_l_ref": 1440.0,
+    "cond_l_scale": 1040.0
+  },
+  "channel": {
+    "backend": "erp",
+    "gamma_per_w_km": 1.3,
+    "alpha_db_km": 0.2,
+    "D_ps_nm_km": 16.0,
+    "Fc_hz": 193100000000000.0,
+    "n_pol": 2,
+    "manakov": true,
+    "Ltotal_km": 400.0,
+    "Lspan_km": 80.0,
+    "hz_km": 1.0,
+    "NF_db": 4.5,
+    "amp": "edfa",
+    "P_tx_dBm": 0.0,
+    "n_branches_per_span": 8,
+    "branch_spacing_km": 10.0,
+    "erp_mean_phase_coeff": 2.0,
+    "sps": 16,
+    "rolloff": 0.1,
+    "n_taps": 257,
+    "symbol_rate_hz": 32000000000.0,
+    "pilots": true,
+    "pilot_spacing": 32,
+    "neighbour_frames": true,
+    "trx_snr_db": 23.0,
+    "trx_rx_fraction": 0.5,
+    "linewidth_tx_hz": 100000.0,
+    "linewidth_lo_hz": 100000.0,
+    "freq_offset_hz": 0.0,
+    "random_carrier_phase": true,
+    "randomize_reach": true,
+    "reach_min_km": 400.0,
+    "reach_max_km": 2480.0,
+    "randomize_span": true,
+    "span_min_km": 60,
+    "span_max_km": 100,
+    "randomize_nf": true,
+    "nf_min_db": 4.0,
+    "nf_max_db": 6.0,
+    "randomize_power": true,
+    "power_min_dbm": -6.0,
+    "power_max_dbm": 3.0,
+    "power_limit_table": [
+      [
+        60.0,
+        420.0,
+        0.5
+      ],
+      [
+        60.0,
+        960.0,
+        -0.5
+      ],
+      [
+        60.0,
+        1440.0,
+        -1.5
+      ],
+      [
+        60.0,
+        1980.0,
+        -2.0
+      ],
+      [
+        60.0,
+        2460.0,
+        -2.5
+      ],
+      [
+        80.0,
+        400.0,
+        2.0
+      ],
+      [
+        80.0,
+        960.0,
+        1.0
+      ],
+      [
+        80.0,
+        1440.0,
+        0.0
+      ],
+      [
+        80.0,
+        2000.0,
+        -0.5
+      ],
+      [
+        80.0,
+        2240.0,
+        -1.0
+      ],
+      [
+        80.0,
+        2480.0,
+        -1.0
+      ],
+      [
+        100.0,
+        400.0,
+        3.0
+      ],
+      [
+        100.0,
+        1000.0,
+        2.0
+      ],
+      [
+        100.0,
+        1200.0,
+        1.5
+      ],
+      [
+        100.0,
+        1400.0,
+        1.5
+      ],
+      [
+        100.0,
+        2000.0,
+        0.5
+      ],
+      [
+        100.0,
+        2500.0,
+        0.5
+      ]
+    ],
+    "randomize_transceiver": true,
+    "trx_snr_min_db": 20.0,
+    "trx_snr_max_db": 26.0,
+    "linewidth_max_hz": 500000.0,
+    "freq_offset_max_hz": 10000000.0
+  },
+  "train": {
+    "lambda_ce": 1.0,
+    "lambda_mse": 100.0,
+    "lambda_ssim": 2.0,
+    "label_smoothing": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.05,
+    "epochs": 40,
+    "batch_size": 64,
+    "eval_batch_size": 128,
+    "grad_clip": 1.0,
+    "augment": true,
+    "val_fraction": 0.1,
+    "smooth_window": 3,
+    "patience": 0,
+    "seed": 0,
+    "split_seed": 0,
+    "num_workers": 2,
+    "log_every": 50
+  },
+  "eval": {
+    "seed": 1234
+  },
+  "run_name": "paper_v3"
+}

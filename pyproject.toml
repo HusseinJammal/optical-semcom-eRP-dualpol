@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semcom"
+version = "1.0.0"
+description = "End-to-end optical semantic communication over dual-polarization coherent links, trained through a differentiable eRP Manakov fibre model and evaluated with the split-step Fourier method"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "numba>=0.57",
+    "scikit-image>=0.21",
+    "scikit-learn>=1.2",
+    "Pillow>=9.0",
+    "pytorch-msssim>=1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+gpu = ["cupy-cuda12x"]
+
+[tool.setuptools.packages.find]
+include = ["semcom*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]
