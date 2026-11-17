@@ -99,7 +99,7 @@ baseline classifiers, Fig. 2(a) near-optimum power vs link length, Fig. 2(b) −
 400 km, and Table 1 (accuracy and CPU processing time). See [`docs/evaluation.md`](docs/evaluation.md) for the conditions
 and the compute cost.
 
-## Citation
+## Citation (Currently Not Available)
 
 If you use this code, please cite the accompanying OFC paper (bibliographic details to be added on publication):
 
